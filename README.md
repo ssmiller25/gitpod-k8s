@@ -1,4 +1,11 @@
-# ssmillers "gitpod-k8s"
+# GitPod K8S
 
-A container designed to work with Gitpod, that provides all the required infrastructure to 
-operate.  This is a bit opinionated - does contain my perferred shell env.
+GitPod customize environment for deployment apps or managing cloud hosted k8s environments
+
+Self-referential (use gitpod-k8s to develop against itself!)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+
+## Cloud Providers Supported
+
+- Civo

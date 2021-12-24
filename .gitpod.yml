@@ -1,0 +1,6 @@
+image: quay.io/ssmiller25/gitpod-k8s:20211121-3
+
+vscode:
+  extensions:
+    - ms-azuretools.vscode-docker
+    - ms-kubernetes-tools.vscode-kubernetes-tools
