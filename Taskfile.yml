@@ -1,0 +1,22 @@
+# https://taskfile.dev
+
+version: '3'
+
+vars:
+  version: 20211121-3
+  release_date: 
+    sh: date +%Y-%m-%d
+  upstream_image: gitpod/workspace-full@sha256:4713c384ce8be4b0cf1e413b6c860e0d18eb0718a8d9a1f16c302be6f4e697f7
+  image_name: gitpod-k8s
+  build_repo: quay.io/ssmiller25
+  build_image: "{{.build_repo}}/{{.image_name}}"
+
+tasks:
+  default:
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+  latest-sha256:
+    cmds:
+      - docker pull gitpod/workspace-full:latest      
+      - docker inspect --format='{{index .RepoDigests 0}}' gitpod/workspace-full:latest
