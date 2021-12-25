@@ -40,7 +40,7 @@ USER gitpod
 RUN brew install starship
 
 # starship configuration
-RUN mkdir $HOME/.config
+RUN mkdir $HOME/.config || true
 COPY scripts/starship.toml $HOME/.config/starship.toml
 
 # bashrc inclusion for custom startup commands - from https://community.gitpod.io/t/how-to-config-bashrc/957/13
