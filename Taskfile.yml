@@ -9,7 +9,7 @@ vars:
   upstream_image: gitpod/workspace-full@sha256:46859378f3067e50e8d9509e270f67a0447bb28f5d2a2f0c723dc916411a46c8
   image_name: gitpod-k8s
   build_repo: quay.io/ssmiller25
-  build_image: "{{.build_repo}}/{{.image_name}}"
+  build_image: '{{.build_repo}}/{{.image_name}}'
   git_hash:
     sh: git rev-parse --short -q HEAD
   run_flags: 
@@ -26,7 +26,7 @@ tasks:
   docker:build:
     cmds:
       - |
-        docker build . -t {{.build_image}:{{.git_hash}} \
+        docker build . -t {{.build_image}}:{{.git_hash}} \
         --build-arg GIT_HASH={{.git_hash}} \
         --build-arg VERSION={{.version}} \
         --build-arg RELEASE_DATE={{.release_date}} \
