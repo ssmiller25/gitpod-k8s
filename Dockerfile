@@ -18,20 +18,23 @@ RUN curl -sLS https://get.arkade.dev | sh && \
 
 # Install basic k8s utilities and civo
 #  TODO: Add kustomize back in once it's fixed
-RUN for util in civo kubectl helm; do \
+RUN for util in civo kubectl helm kustomize; do \
   arkade get ${util}; \
   sudo mv .arkade/bin/${util} /usr/local/bin/; \
   done
 
+# Task
+RUN sudo sh -c "$(curl --location https://taskfile.dev/install.sh)" -- -d -b /usr/local/bin
+
 # Work-around until they kustomize fixed in arkade
-USER root
+#USER root
 
-RUN curl -LO https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.4.1/kustomize_v4.4.1_linux_amd64.tar.gz && \
-  tar -xf kustomize*.tar.gz && \
-  mv kustomize /usr/local/bin && \
-  rm kustomize*.tar.gz
+#RUN curl -LO https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv4.4.1/kustomize_v4.4.1_linux_amd64.tar.gz && \
+#  tar -xf kustomize*.tar.gz && \
+#  mv kustomize /usr/local/bin && \
+#  rm kustomize*.tar.gz
 
-USER gitpod
+#USER gitpod
 
 # Install starship
 RUN brew install starship
