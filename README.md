@@ -9,3 +9,9 @@ Self-referential (use gitpod-k8s to develop against itself!)
 ## Cloud Providers Supported
 
 - Civo
+  - Go to <https://www.civo.com/account/security> and generate an API Key
+  - Within Gitpod, run
+
+    ```sh
+    gp env CIVO_API_KEY=xxxxxyyyzzz
+    ```
