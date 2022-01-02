@@ -2,13 +2,20 @@
 #
 # Setup initial civo kubectl with ALL cluster imported
 
+CIVO_VERSION=${CIVO_VERSION-"v1.0.5"}
+
 if [ -n "${CIVO_API_KEY}" ]; then
+    docker pull civo/cli:${CIVO_VERSION}
+    touch $HOME/.civo.json
+    alias civo="docker run -it --rm -v $HOME/.civo.json:/.civo.json civo/cli:${CIVO_VERSION}"
     if ! civo apikey add default "$CIVO_API_KEY" > /dev/null 2>&1; then
         echo "CIVO API add failed.  Check your \$CIVO_API_KEY variable.  See README.md for details."
         exit 1
     fi
     mkdir "${HOME}"/.kube > /dev/null 2>&1
     kubectl config view --raw > "${HOME}"/.kube/config
+    # Realias to include kubernetes config
+    alias civo="docker run -it --rm -v $HOME/.civo.json:/.civo.json -v $HOME/.kube/config:/.kube/config civo/cli:${CIVO_VERSION}"
     for cluster in $(civo k3s list -o custom -f "name"); do
         civo k3s config "${cluster}" --save --merge
     done
