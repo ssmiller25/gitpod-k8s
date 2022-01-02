@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Task autocompletion, from https://github.com/go-task/task/blob/master/completion/bash/task.bash
 
 _task_completion()

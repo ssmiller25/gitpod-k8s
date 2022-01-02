@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 #
 # Setup initial civo kubectl with ALL cluster imported
 

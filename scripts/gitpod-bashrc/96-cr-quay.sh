@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Quay.io Continer registry
 
 # Get from https://quay.io/user/ssmiller25?tab=settings, CLI password, Docker Login
