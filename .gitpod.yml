@@ -1,4 +1,4 @@
-image: quay.io/ssmiller25/gitpod-k8s:20211230-1
+image: quay.io/ssmiller25/gitpod-k8s:20220102-1
 
 vscode:
   extensions:
