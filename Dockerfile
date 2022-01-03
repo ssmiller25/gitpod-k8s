@@ -22,3 +22,7 @@ COPY scripts/starship.toml $HOME/.config/starship.toml
 
 # bashrc inclusion for custom startup commands - from https://community.gitpod.io/t/how-to-config-bashrc/957/13
 COPY scripts/gitpod-bashrc/* $HOME/.bashrc.d/
+
+# Copy environment scripts into docker image directly
+mkdir $HOME/scripts
+COPY scripts/*.sh $HOME/scripts
