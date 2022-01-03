@@ -25,4 +25,4 @@ COPY scripts/gitpod-bashrc/* $HOME/.bashrc.d/
 
 # Copy environment scripts into docker image directly
 RUN mkdir $HOME/scripts
-COPY scripts/*.sh $HOME/scripts
+COPY scripts/*.sh $HOME/scripts/
