@@ -3,7 +3,7 @@
 
 # Get from https://quay.io/user/ssmiller25?tab=settings, CLI password, Docker Login
 
-script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 . ${script_dir}/lib.sh
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Docker registry
 
-script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 . ${script_dir}/lib.sh
 

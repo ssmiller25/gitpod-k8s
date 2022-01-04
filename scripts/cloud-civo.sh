@@ -2,7 +2,7 @@
 #
 # Setup initial civo kubectl with ALL cluster imported
 
-script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 . ${script_dir}/lib.sh
 
