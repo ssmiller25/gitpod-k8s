@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # Docker registry
 
-script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+# Does not work from Gitpod bashrc.d - debug later
+#script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+script_dir=/home/gitpod/scripts/
 
 . ${script_dir}/lib.sh
 
