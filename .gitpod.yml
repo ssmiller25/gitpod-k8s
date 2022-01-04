@@ -2,9 +2,9 @@ image: quay.io/ssmiller25/gitpod-k8s:20220104-1
 tasks:
   - name: Setup Environments
     init: |
-      sh $HOME/scripts/cloud-civo.sh
-      sh $HOME/scripts/cr-docker.sh
-      sh $HOME/scripts/cr-quay.sh
+      bash $HOME/scripts/cloud-civo.sh
+      bash $HOME/scripts/cr-docker.sh
+      bash $HOME/scripts/cr-quay.sh
 vscode:
   extensions:
     - ms-azuretools.vscode-docker
