@@ -2,8 +2,9 @@
 #
 # Setup initial civo kubectl with ALL cluster imported
 
-# Debug
-#set -x
+script_dir=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd -P)
+
+. ${script_dir}/lib.sh
 
 CIVO_VERSION=${CIVO_VERSION-"v1.0.5"}
 
@@ -16,10 +17,15 @@ civo() {
 }
 
 if [ -n "${CIVO_API_KEY}" ]; then
-    docker pull civo/cli:${CIVO_VERSION}
+    msg "${BLUE}Logging into Civo${NOFORMAT}"
+    msg "${BLUE}Pulling civo/cli container${NOFORMAT}"
+    if ! docker pull civo/cli:${CIVO_VERSION} > /dev/null 2>&1; then
+        msg "${RED}Error pulling civo/cli:${CIVO_VERSION}${NOFORMAT}"
+        exit 1
+    fi
     touch $HOME/.civo.json
     if ! civo apikey add default "$CIVO_API_KEY" > /dev/null 2>&1; then
-        echo "CIVO API add failed.  Check your \$CIVO_API_KEY variable.  See README.md for details."
+        msg "${RED}CIVO API add failed.  Check your CIVO_API_KEY variable.  See README.md for details.${NOFORMAT}"
         exit 1
     fi
     mkdir "${HOME}"/.kube > /dev/null 2>&1
@@ -28,6 +34,10 @@ if [ -n "${CIVO_API_KEY}" ]; then
     for cluster in $(civo k3s list -o custom -f "name"); do
         # Minor bug of some sort in docker out - removing charriage returns
         cluclean=$(echo ${cluster} | tr -d '\r')
-        civo k3s config "${cluclean}" --save --merge
+        msg "${BLUE}Adding Civo Kubernetes Cluster:${NOFORMAT} ${cluclean}"
+        if ! civo k3s config "${cluclean}" --save --merge > /dev/null 2>&1; then
+            msg "${RED}Error adding ${cluclean} to kubeconfig.${NOFORMAT}"
+        fi
     done
+    msg ""
 fi
