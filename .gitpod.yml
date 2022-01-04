@@ -1,4 +1,4 @@
-image: quay.io/ssmiller25/gitpod-k8s:20220104-1
+image: quay.io/ssmiller25/gitpod-k8s:20220104-2
 tasks:
   - name: Setup Environments
     init: |
