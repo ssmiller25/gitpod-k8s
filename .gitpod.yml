@@ -1,10 +1,12 @@
 image: quay.io/ssmiller25/gitpod-k8s:20220104-2
 tasks:
-  - name: Setup Environments
+  - name: Login to Artifact Repositories
     init: |
-      bash $HOME/scripts/cloud-civo.sh
       bash $HOME/scripts/cr-docker.sh
       bash $HOME/scripts/cr-quay.sh
+  - name: Login/Setup Cloud Providers
+    init: |
+      bash $HOME/scripts/cloud-civo.sh
 vscode:
   extensions:
     - ms-azuretools.vscode-docker

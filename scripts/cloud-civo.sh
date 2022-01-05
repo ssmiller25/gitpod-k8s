@@ -7,15 +7,7 @@ script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 . ${script_dir}/lib.sh
 
-CIVO_VERSION=${CIVO_VERSION-"v1.0.5"}
-
-civo() {
-    if [ -r $HOME/.kube/config ]; then
-        docker run -it --rm -v $HOME/.civo.json:/.civo.json -v $HOME/.kube/config:/root/.kube/config civo/cli:${CIVO_VERSION} $@
-    else
-        docker run -it --rm -v $HOME/.civo.json:/.civo.json civo/cli:${CIVO_VERSION} $@
-    fi
-}
+. /home/gitpod/.bashrc.d/92-civo-cli.sh
 
 if [ -n "${CIVO_API_KEY}" ]; then
     msg "${BLUE}Logging into Civo${NOFORMAT}"
