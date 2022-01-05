@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Gitpod bashrc - may replace with my containered "dotfiles" later at some point...but later...
 
 # kubectl shortcuts
