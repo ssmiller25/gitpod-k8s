@@ -19,19 +19,14 @@ Self-referential (use gitpod-k8s to develop against itself!)
 ## Container Registries Supported
 
 - Docker
-  - base64 encode your password:
-
-    ```sh
-    echo -n 'my_good_password' | base64
-    ```
-
   - Within Gitpod, run the following
 
     ```sh
-    gp env DOCKER
+    gp env DOCKER_USERNAME=username
+    gp env DOCKER_PASSWORD=$(echo -n 'my_good_password' | base64)
     ```
-- Quay-io
 
+- Quay
   - In upper-right hand corner, click your username, then Account Settings
   - Click "Generate Encrypted Password"
   - Select "Docker Login"  Use the data from "-u" for the username and "-p" for the password
@@ -41,3 +36,4 @@ Self-referential (use gitpod-k8s to develop against itself!)
     gp env QUAY_USERNAME=usernmae
     gp env QUAY_PASSWORD=myquaypassword
     ```
+    
