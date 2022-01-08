@@ -14,6 +14,7 @@ Self-referential (use gitpod-k8s to develop against itself!)
 
     ```sh
     gp env CIVO_API_KEY=xxxxxyyyzzz
+    gp env CIVO_REGION=NYC1    #civo region ls to see all available regions
     ```
 
 ## Container Registries Supported
