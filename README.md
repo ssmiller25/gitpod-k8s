@@ -6,6 +6,30 @@ Self-referential (use gitpod-k8s to develop against itself!)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
 
+## Initial Setup
+
+- Create a `.gitpod.yml` in your repository with the following contents:
+
+  ```sh
+  image: quay.io/ssmiller25/gitpod-k8s:20220108-2
+  tasks:
+    - name: Login to Cloud Resources
+      command: |
+        bash $HOME/scripts/00-cloudinit.sh
+  vscode:
+    extensions:
+      - ms-azuretools.vscode-docker
+      - ms-kubernetes-tools.vscode-kubernetes-tools
+  ```
+
+- *Optional* Put a link in your README.md to make it easy to open up in Gitpod!  
+
+  ```markdown
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+  ```
+
+  - *Note* The `/from-referrer/` only works for public repos.  For private repos, use [a full link](https://www.gitpod.io/docs/context-urls)
+
 ## Cloud Providers Supported
 
 - Civo
