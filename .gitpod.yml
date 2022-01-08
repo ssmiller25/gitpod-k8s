@@ -1,4 +1,4 @@
-image: quay.io/ssmiller25/gitpod-k8s:20220105-1
+image: quay.io/ssmiller25/gitpod-k8s:20220108-1
 tasks:
   - name: Login to Artifact Repositories
     command: |
