@@ -21,6 +21,11 @@ if [ -n "${CIVO_API_KEY}" ]; then
         msg "${RED}CIVO API add failed.  Check your CIVO_API_KEY variable.  See README.md for details.${NOFORMAT}"
         exit 1
     fi
+    if [ -n "${CIVO_REGION}" ]; then
+        civo region current ${CIVO_REGION}
+    else
+        civo region current "LON1"
+    fi
     mkdir "${HOME}"/.kube > /dev/null 2>&1
     kubectl config view --raw > "${HOME}"/.kube/config
     # Realias to include kubernetes config"
