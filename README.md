@@ -6,6 +6,34 @@ Self-referential (use gitpod-k8s to develop against itself!)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
 
+## Initial Setup
+
+- Create a `.gitpod.yml` in your repository with the following contents:
+
+  ```sh
+  image: quay.io/ssmiller25/gitpod-k8s:20220105-1
+  tasks:
+    - name: Login to Artifact Repositories
+      init: |
+        bash $HOME/scripts/cr-docker.sh
+        bash $HOME/scripts/cr-quay.sh
+    - name: Login/Setup Cloud Providers
+      init: |
+        bash $HOME/scripts/cloud-civo.sh
+  vscode:
+    extensions:
+      - ms-azuretools.vscode-docker
+      - ms-kubernetes-tools.vscode-kubernetes-tools
+  ```
+
+- *Optional* Put a link in your README.md to make it easy to open up in Gitpod!  
+
+  ```markdown
+  [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+  ```
+
+  - *Note* The `/from-referrer/` only works for public repos.  For private repos, use [a full link](https://www.gitpod.io/docs/context-urls)
+
 ## Cloud Providers Supported
 
 - Civo
