@@ -13,12 +13,10 @@ Self-referential (use gitpod-k8s to develop against itself!)
   ```sh
   image: quay.io/ssmiller25/gitpod-k8s:20220105-1
   tasks:
-    - name: Login to Artifact Repositories
-      init: |
+    - name: Login to Cloud Resources
+      command: |
         bash $HOME/scripts/cr-docker.sh
         bash $HOME/scripts/cr-quay.sh
-    - name: Login/Setup Cloud Providers
-      init: |
         bash $HOME/scripts/cloud-civo.sh
   vscode:
     extensions:
