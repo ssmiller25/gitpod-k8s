@@ -15,9 +15,7 @@ Self-referential (use gitpod-k8s to develop against itself!)
   tasks:
     - name: Login to Cloud Resources
       command: |
-        bash $HOME/scripts/cr-docker.sh
-        bash $HOME/scripts/cr-quay.sh
-        bash $HOME/scripts/cloud-civo.sh
+        bash $HOME/scripts/00-cloudinit.sh
   vscode:
     extensions:
       - ms-azuretools.vscode-docker
