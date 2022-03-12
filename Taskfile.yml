@@ -3,7 +3,7 @@
 version: '3'
 
 vars:
-  version: 20220312-1
+  version: 20220312-2
   release_date: 
     sh: date +%Y-%m-%d
   upstream_image: gitpod/workspace-full@sha256:42c36a03ed9f1632dce28d4564c376416c77bcd1ea4f2cef509d2ee60d66357b
