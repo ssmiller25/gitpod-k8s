@@ -5,6 +5,10 @@ ARG UPSTREAM_IMAGE
 
 FROM ${UPSTREAM_IMAGE}
 
+# Latest apt updates
+RUN sudo apt-get update && sudo apt-get dist-upgrade -y \
+  && sudo rm -rf /var/lib/apt/lists/*
+
 # Base for gitpod-k8s - basic kubernetes, along with shellcheck util
 RUN for util in shellcheck kubectl helm kustomize; do \
   brew install ${util}; \
