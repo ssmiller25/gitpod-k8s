@@ -14,8 +14,8 @@ RUN for util in shellcheck kubectl helm kustomize; do \
   brew install ${util}; \
   done
 
-# Task utility
-RUN brew install go-task/tap/go-task
+# Act Utility - Run github actions on cli
+RUN brew install act
 
 # Install starship - better cli
 RUN brew install starship
