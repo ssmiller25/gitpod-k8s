@@ -62,3 +62,12 @@ Self-referential (use gitpod-k8s to develop against itself!)
     gp env QUAY_PASSWORD=myquaypassword
     ```
     
+
+## Update notes
+
+Pull latest sha256 hash:
+
+```sh
+# Uses act to run github actions
+./lrun -j docker-latest
+```

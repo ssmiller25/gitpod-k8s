@@ -1,0 +1,23 @@
+name: Docker Latest
+
+on:
+  workflow_dispatch:
+#  push:
+#    branches:
+#      - 'main'
+#    tags:
+#      - 'v*'
+#  pull_request:
+#    branches:
+#      - 'main'
+
+jobs:
+ docker-latest:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Latest Gitpod
+        run: |
+          echo "Fetching latest gitpod/workspace-full"
+          docker pull gitpod/workspace-full:latest
+          docker inspect --format='{{"{{"}}index .RepoDigests 0{{"}}"}}' gitpod/workspace-full:latest
