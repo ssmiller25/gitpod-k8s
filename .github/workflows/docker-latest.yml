@@ -1,0 +1,15 @@
+name: Docker Latest SHA256
+
+on:
+  workflow_dispatch:
+
+jobs:
+ docker-latest:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Latest Gitpod SHA256
+        run: |
+          echo "Fetching latest gitpod/workspace-full"
+          docker pull gitpod/workspace-full:latest
+          docker inspect --format='{{"{{"}}index .RepoDigests 0{{"}}"}}' gitpod/workspace-full:latest

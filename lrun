@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Simple wrapper around act so that appropriate parameters are passed
+
+act -s QUAY_USERNAME -s QUAY_PASSWORD -s GITHUB_TOKEN $@

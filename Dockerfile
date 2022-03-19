@@ -1,9 +1,5 @@
-ARG GIT_HASH
-ARG VERSION
-ARG RELEASE_DATE
-ARG UPSTREAM_IMAGE
-
-FROM ${UPSTREAM_IMAGE}
+# Updated 3/12/2022
+FROM gitpod/workspace-full@sha256:b484ad49d47bf70776de1d1333379d6b5f1d56c0a3fc1f31a24eb273ef772e3e
 
 # Latest apt updates
 RUN sudo apt-get update && sudo apt-get dist-upgrade -y \
@@ -14,8 +10,8 @@ RUN for util in shellcheck kubectl helm kustomize; do \
   brew install ${util}; \
   done
 
-# Task utility
-RUN brew install go-task/tap/go-task
+# Act Utility - Run github actions on cli
+RUN brew install act
 
 # Install starship - better cli
 RUN brew install starship

@@ -11,7 +11,7 @@ Self-referential (use gitpod-k8s to develop against itself!)
 - Create a `.gitpod.yml` in your repository with the following contents:
 
   ```sh
-  image: quay.io/ssmiller25/gitpod-k8s:20220312-2
+  image: quay.io/ssmiller25/gitpod-k8s:1.0.0
   tasks:
     - name: Login to Cloud Resources
       command: |
@@ -62,3 +62,12 @@ Self-referential (use gitpod-k8s to develop against itself!)
     gp env QUAY_PASSWORD=myquaypassword
     ```
     
+
+## Update notes
+
+Pull latest sha256 hash:
+
+```sh
+# Uses act to run github actions
+./lrun -j docker-latest
+```
