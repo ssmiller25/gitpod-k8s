@@ -1,22 +1,14 @@
-name: Docker Latest
+name: Docker Latest SHA256
 
 on:
   workflow_dispatch:
-#  push:
-#    branches:
-#      - 'main'
-#    tags:
-#      - 'v*'
-#  pull_request:
-#    branches:
-#      - 'main'
 
 jobs:
  docker-latest:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Latest Gitpod
+        name: Latest Gitpod SHA256
         run: |
           echo "Fetching latest gitpod/workspace-full"
           docker pull gitpod/workspace-full:latest
