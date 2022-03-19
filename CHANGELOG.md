@@ -15,5 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Updated gitpod-full from 2022-03-18
 - Move to semver
 - Github action workflow to build container
