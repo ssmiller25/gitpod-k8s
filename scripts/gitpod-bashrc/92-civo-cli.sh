@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 
-CIVO_VERSION=${CIVO_VERSION-"v1.0.5"}
+CIVO_VERSION=${CIVO_VERSION-"latest"}
 
 civo() {
     if [ -r $HOME/.kube/config ]; then
