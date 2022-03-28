@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Overall
 
+## [1.1.0] - 2022-03-28
+
+### Changed
+
+- Civo now will default to pulling `latest` image - will still respect CIVO_VERSION env if set.
+### Overall
+
 ## [1.0.0] - 2022-03-19
 
 ### Added
