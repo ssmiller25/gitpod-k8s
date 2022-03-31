@@ -11,7 +11,7 @@ Self-referential (use gitpod-k8s to develop against itself!)
 - Create a `.gitpod.yml` in your repository with the following contents:
 
   ```sh
-  image: quay.io/ssmiller25/gitpod-k8s:1.0.0
+  image: quay.io/ssmiller25/gitpod-k8s:latest
   tasks:
     - name: Login to Cloud Resources
       command: |
