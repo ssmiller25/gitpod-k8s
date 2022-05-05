@@ -2,12 +2,7 @@
 #
 # Setup initial civo kubectl with ALL cluster imported
 
-script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-
-. ${script_dir}/lib.sh
-
-. /home/gitpod/.bashrc.d/92-civo-cli.sh
+# $CIVO_VERSION set in 13-civo-cli
 
 if [ -n "${CIVO_API_KEY}" ]; then
     msg "${BLUE}Logging into Civo${NOFORMAT}"

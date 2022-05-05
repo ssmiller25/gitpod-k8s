@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 CIVO_VERSION=${CIVO_VERSION-"latest"}
 
 civo() {
