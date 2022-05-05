@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 # Quay.io Continer registry
 
-script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-
-. ${script_dir}/lib.sh
-
 if [ -n "${QUAY_USERNAME}" ]; then
     msg "${BLUE}Logging into Quay.io as:${NOFORMAT} ${QUAY_USERNAME}"
     # Quay password is already base64 encoded
