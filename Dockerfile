@@ -1,5 +1,5 @@
-# Updated 4/30/2022
-FROM gitpod/workspace-full@sha256:78ba498b89aa95bddd7f8bad05b0fead4406254125ec91def092f89a53c7daf2
+# Updated 6/21/2022
+FROM gitpod/workspace-full@sha256:c1c6267d94727a42158d953ab96ad0bcf8e2e3edfd87223555f441131ca8a97c
 
 # Latest apt updates
 RUN sudo apt-get update && sudo apt-get dist-upgrade -y \
