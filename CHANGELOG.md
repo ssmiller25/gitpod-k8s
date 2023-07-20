@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Overall
 
+## [2.0.0] - 2023-07-23
+
+### Changes
+
+- Gitpod has updated the base image to [Ubuntu-22.04](https://www.gitpod.io/changelog/workpace-images-os-update-and-breaking-changes).  Major version change on my side as well.
+
+### Changed
 ## [1.1.3] - 2022-11-23
 
 ### Changed

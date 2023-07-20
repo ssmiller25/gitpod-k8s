@@ -65,9 +65,17 @@ Self-referential (use gitpod-k8s to develop against itself!)
 
 ## Update notes
 
-Pull latest sha256 hash:
+1 Pull latest sha256 hash:
 
-```sh
-# Uses act to run github actions
-./lrun -j docker-latest
-```
+  ```sh
+  # Uses act to run github actions
+  ./lrun -j docker-latest
+  ```
+
+2. Update SHA256 hash locally
+3. Build docker container locally and test
+
+  ```sh
+  docker build -t local-test .
+  
+  ```
